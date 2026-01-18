@@ -1,5 +1,7 @@
-import { Link } from 'react-router-dom'
 import './Services.css'
+
+// Link WhatsApp com mensagem pré-preenchida
+const WHATSAPP_LINK = "https://wa.me/5531996568846?text=Olá%20Vitor!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20criação%20de%20um%20site%20para%20meu%20negócio.%0A%0ATipo%20de%20negócio:%0AObjetivo%20do%20site:%0AForma%20de%20contato%20com%20clientes:"
 
 export default function Services() {
   return (
@@ -19,9 +21,14 @@ export default function Services() {
             reais para negócios que querem crescer no digital.
           </p>
 
-          <Link to="/contato" className="btn primary">
+          <a 
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn primary"
+          >
             Solicitar orçamento
-          </Link>
+          </a>
         </div>
 
         {/* SERVIÇOS */}
@@ -85,9 +92,14 @@ export default function Services() {
         {/* CTA INTERMEDIÁRIO */}
         <div className="services-cta">
           <p>Pronto para aplicar isso no seu negócio?</p>
-          <Link to="/contato" className="btn outline">
+          <a 
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn outline"
+          >
             Solicitar orçamento
-          </Link>
+          </a>
         </div>
 
         {/* BLOCO FINAL */}
@@ -143,13 +155,17 @@ export default function Services() {
           <div className="services-final-cta">
             <h2>Vamos tirar seu projeto do papel?</h2>
             <p>
-              Entre em contato e vamos criar uma solução web sob medida
-              para o seu negócio.
+              Me conte rapidamente sobre seu negócio e eu te explico a melhor solução.
             </p>
 
-            <Link to="/contato" className="btn primary">
-              Entrar em contato
-            </Link>
+            <a 
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn primary"
+            >
+              Falar no WhatsApp
+            </a>
           </div>
 
         </div>

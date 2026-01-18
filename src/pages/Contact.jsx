@@ -45,7 +45,7 @@ ${message}`
     const encodedMessage = encodeURIComponent(whatsappMessage)
 
     window.open(
-      `https://wa.me/5531996568462?text=${encodedMessage}`,
+      `https://wa.me/5531996568846?text=${encodedMessage}`,
       '_blank'
     )
 

@@ -1,5 +1,33 @@
-import { Link } from 'react-router-dom'
 import './Projects.css'
+
+// Links WhatsApp com mensagens específicas por serviço
+const WHATSAPP_BASE = "https://wa.me/5531996568846?text="
+
+const WHATSAPP_LINKS = {
+  institucional: WHATSAPP_BASE + encodeURIComponent(`Olá Vitor! Vi o projeto de Site Institucional no seu site e tenho interesse em algo similar para meu negócio.
+
+Tipo de negócio:
+Objetivo do site:
+Forma de contato com clientes:`),
+  
+  landing: WHATSAPP_BASE + encodeURIComponent(`Olá Vitor! Vi o projeto de Landing Page no seu site e quero uma página focada em conversão.
+
+Tipo de negócio:
+Objetivo da página:
+Forma de contato com clientes:`),
+  
+  local: WHATSAPP_BASE + encodeURIComponent(`Olá Vitor! Vi o projeto para Negócio Local no seu site e preciso de um site para minha empresa.
+
+Tipo de negócio:
+Objetivo do site:
+Forma de contato com clientes:`),
+  
+  geral: WHATSAPP_BASE + encodeURIComponent(`Olá Vitor! Vi seu site e gostaria de saber mais sobre a criação de um site para meu negócio.
+
+Tipo de negócio:
+Objetivo do site:
+Forma de contato com clientes:`)
+}
 
 export default function Projects() {
   return (
@@ -38,9 +66,14 @@ export default function Projects() {
               <li>CTA direto para WhatsApp</li>
             </ul>
 
-            <Link to="/contato?servico=site-institucional" className="project-cta">
+            <a 
+              href={WHATSAPP_LINKS.institucional}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-cta"
+            >
               Quero um projeto assim
-            </Link>
+            </a>
 
             <span className="tag">Projeto demonstrativo</span>
           </div>
@@ -61,9 +94,14 @@ export default function Projects() {
               <li>CTA focado em conversão</li>
             </ul>
 
-            <Link to="/contato?servico=landing-page" className="project-cta">
+            <a 
+              href={WHATSAPP_LINKS.landing}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-cta"
+            >
               Quero um projeto assim
-            </Link>
+            </a>
 
             <span className="tag">Estudo de caso</span>
           </div>
@@ -84,9 +122,14 @@ export default function Projects() {
               <li>Contato facilitado via WhatsApp</li>
             </ul>
 
-            <Link to="/contato?servico=negocio-local" className="project-cta">
+            <a 
+              href={WHATSAPP_LINKS.local}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-cta"
+            >
               Quero um projeto assim
-            </Link>
+            </a>
 
             <span className="tag">Projeto conceitual</span>
           </div>
@@ -107,13 +150,18 @@ export default function Projects() {
           <h2>Quer um projeto assim para o seu negócio?</h2>
 
           <p>
-            Entre em contato e vamos criar uma solução web focada
-            em conversão e resultados reais.
+            Me conte rapidamente sobre seu negócio e vamos criar uma solução
+            web focada em conversão e resultados reais.
           </p>
 
-          <Link to="/contato" className="btn primary">
-            Entrar em contato
-          </Link>
+          <a 
+            href={WHATSAPP_LINKS.geral}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn primary"
+          >
+            Falar no WhatsApp
+          </a>
         </div>
 
       </div>
