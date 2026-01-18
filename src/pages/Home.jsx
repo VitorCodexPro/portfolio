@@ -4,7 +4,7 @@ import './Home.css'
 import foto from '../assets/images/foto.png'
 
 // Link WhatsApp com mensagem pré-preenchida
-const WHATSAPP_LINK = "https://wa.me/5531996568846?text=Olá%20Vitor!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20criação%20de%20um%20site%20para%20meu%20negócio.%0A%0ATipo%20de%20negócio:%0AObjetivo%20do%20site:%0AForma%20de%20contato%20com%20clientes:"
+const WHATSAPP_LINK = "https://wa.me/5531996568462?text=Olá%20Vitor!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20criação%20de%20um%20site%20para%20meu%20negócio.%0A%0ATipo%20de%20negócio:%0AObjetivo%20do%20site:%0AForma%20de%20contato%20com%20clientes:"
 
 export default function Home() {
   const [activeModal, setActiveModal] = useState(null)

@@ -1,7 +1,7 @@
 import './Projects.css'
 
 // Links WhatsApp com mensagens específicas por serviço
-const WHATSAPP_BASE = "https://wa.me/5531996568846?text="
+const WHATSAPP_BASE = "https://wa.me/5531996568462?text="
 
 const WHATSAPP_LINKS = {
   institucional: WHATSAPP_BASE + encodeURIComponent(`Olá Vitor! Vi o projeto de Site Institucional no seu site e tenho interesse em algo similar para meu negócio.
