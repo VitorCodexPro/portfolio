@@ -11,9 +11,9 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="header-container">
-        <div className="logo">
-          <span>&lt;/&gt;</span> Vitor.dev
-        </div>
+        <Link to="/" className="logo" onClick={closeMenu}>
+          <span>&lt;/&gt;</span> Web com Vitor
+        </Link>
 
         <button 
           className={`menu-toggle ${menuOpen ? 'active' : ''}`} 

@@ -4,15 +4,16 @@
   width: 100%;
   z-index: 100;
 
-  background: rgba(2, 6, 23, 0.6);
+  background: rgba(5, 10, 25, 0.9);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(56, 189, 248, 0.1);
 }
 
 .header-container {
   max-width: 1200px;
+  height: 72px;
   margin: 0 auto;
-  padding: 1rem 1.25rem;
+  padding: 0 1.25rem;
 
   display: flex;
   align-items: center;
@@ -25,23 +26,26 @@
   font-weight: 600;
   font-size: 1.1rem;
   color: var(--text-main);
+  text-decoration: none;
+  z-index: 102;
 }
 
 .logo span {
   color: var(--primary);
 }
 
-/* NAV */
+/* NAV DESKTOP */
 
 .nav {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   align-items: center;
 }
 
 .nav a {
   font-size: 0.95rem;
   color: var(--text-muted);
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
@@ -52,8 +56,8 @@
 /* CTA */
 
 .nav .cta {
-  padding: 0.4rem 0.9rem;
-  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
   border: 1px solid var(--primary);
   color: var(--primary);
 }
@@ -70,7 +74,9 @@
   border: none;
   cursor: pointer;
   padding: 0.5rem;
-  z-index: 101;
+  z-index: 102;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .menu-toggle span {
@@ -78,12 +84,13 @@
   width: 24px;
   height: 2px;
   background: var(--text-main);
-  margin: 5px 0;
   transition: all 0.3s ease;
 }
 
+/* ANIMAÇÃO ☰ → ✕ */
+
 .menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translateY(10px);
 }
 
 .menu-toggle.active span:nth-child(2) {
@@ -91,41 +98,46 @@
 }
 
 .menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translateY(-10px);
 }
 
 /* MOBILE NAV */
 
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;
+    display: flex;
   }
 
   .nav {
     position: fixed;
-    top: 0;
-    right: -100%;
-    width: 70%;
-    max-width: 300px;
-    height: 100vh;
-    background: rgba(2, 6, 23, 0.98);
+    inset: 0;
+    background: rgba(5, 10, 25, 0.98);
     backdrop-filter: blur(10px);
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 2rem;
-    transition: right 0.3s ease;
-    border-left: 1px solid rgba(56, 189, 248, 0.1);
+    gap: 2.5rem;
+
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    pointer-events: none;
   }
 
   .nav.open {
-    right: 0;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .nav a {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 500;
   }
 
   .nav .cta {
-    padding: 0.6rem 1.2rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
   }
+}
 }
