@@ -106,9 +106,10 @@ section {
    UTILITÁRIOS BÁSICOS
    ========================= */
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.25rem;
 }
 
 .text-center {
@@ -121,6 +122,28 @@ body::before {
   inset: 0;
   background: rgba(2, 6, 23, 0.75);
   z-index: -1;
+}
+
+/* =========================
+   RESPONSIVIDADE BASE
+   ========================= */
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
 }
 
 /* =========================
