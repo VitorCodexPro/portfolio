@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './Home.css'
 import foto from '../assets/images/foto.png'
 import sobreImg from '../assets/images/sobre.jpeg'
@@ -37,6 +37,19 @@ Forma de contato com clientes:`)
 
 export default function Home() {
   const [activeModal, setActiveModal] = useState(null)
+  const [showBackToTop, setShowBackToTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 400)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   return (
     <>
@@ -210,9 +223,8 @@ export default function Home() {
 
           <div className="projects-grid">
             <article className="project-card fade-up delay-1">
-              <span className="project-tag">Projeto demonstrativo</span>
-              
               <div className="project-content">
+                <span className="project-tag">Projeto demonstrativo</span>
                 <h3>Site Institucional</h3>
 
                 <p>
@@ -239,9 +251,8 @@ export default function Home() {
             </article>
 
             <article className="project-card fade-up delay-2">
-              <span className="project-tag">Estudo de caso</span>
-              
               <div className="project-content">
+                <span className="project-tag">Estudo de caso</span>
                 <h3>Landing Page de Conversão</h3>
 
                 <p>
@@ -268,10 +279,9 @@ export default function Home() {
             </article>
 
             <article className="project-card fade-up delay-3">
-              <span className="project-tag">Projeto conceitual</span>
-              
               <div className="project-content">
-                <h3>Site Profissional para Negócio Local</h3>
+                <span className="project-tag">Projeto conceitual</span>
+                <h3>Site para Negócio Local</h3>
 
                 <p>
                   Estudo de caso criado para representar a presença digital de um
@@ -386,6 +396,15 @@ export default function Home() {
           </div>
         </div>
       )}
+
+      {/* ==================== BACK TO TOP ==================== */}
+      <button 
+        className={`back-to-top ${showBackToTop ? 'visible' : ''}`}
+        onClick={scrollToTop}
+        aria-label="Voltar ao topo"
+      >
+        ↑
+      </button>
     </>
   )
 }
