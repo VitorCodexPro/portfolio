@@ -1,38 +1,21 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import './Header.css'
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false)
-
-  const toggleMenu = () => setMenuOpen(!menuOpen)
-  const closeMenu = () => setMenuOpen(false)
-
   return (
     <header className="site-header">
       <div className="header-container">
-        <div className="logo">
+        <a href="#home" className="logo">
           <span>&lt;/&gt;</span> Vitor.dev
-        </div>
+        </a>
 
-        <button 
-          className={`menu-toggle ${menuOpen ? 'active' : ''}`} 
-          onClick={toggleMenu}
-          aria-label="Menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <nav className={`nav ${menuOpen ? 'open' : ''}`}>
-          <Link to="/" onClick={closeMenu}>Home</Link>
-          <Link to="/sobre" onClick={closeMenu}>Sobre</Link>
-          <Link to="/projetos" onClick={closeMenu}>Projetos</Link>
-          <Link to="/servicos" onClick={closeMenu}>Serviços</Link>
-          <Link to="/contato" className="cta" onClick={closeMenu}>
+        <nav className="nav">
+          <a href="#home">Home</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#contato" className="cta">
             Contato
-          </Link>
+          </a>
         </nav>
       </div>
     </header>

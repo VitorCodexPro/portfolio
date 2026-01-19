@@ -103,10 +103,10 @@ class GradientBackground {
       uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
       uColor1: { value: new THREE.Vector3(0.945, 0.353, 0.133) }, // #F15A22 - Orange
       uColor2: { value: new THREE.Vector3(0.039, 0.055, 0.153) }, // #0A0E27 - Navy Blue
-      uColor3: { value: new THREE.Vector3(0.945, 0.353, 0.133) },
-      uColor4: { value: new THREE.Vector3(0.039, 0.055, 0.153) },
-      uColor5: { value: new THREE.Vector3(0.945, 0.353, 0.133) },
-      uColor6: { value: new THREE.Vector3(0.039, 0.055, 0.153) },
+      uColor3: { value: new THREE.Vector3(0.251, 0.878, 0.816) }, // #40E0D0 - Turquoise
+      uColor4: { value: new THREE.Vector3(0.039, 0.055, 0.153) }, // #0A0E27 - Navy Blue
+      uColor5: { value: new THREE.Vector3(0.945, 0.353, 0.133) }, // #F15A22 - Orange
+      uColor6: { value: new THREE.Vector3(0.251, 0.878, 0.816) }, // #40E0D0 - Turquoise
       uSpeed: { value: 1.5 },
       uIntensity: { value: 1.8 },
       uTouchTexture: { value: null },

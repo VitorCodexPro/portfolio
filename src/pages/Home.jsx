@@ -1,25 +1,52 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import './Home.css'
 import foto from '../assets/images/foto.png'
+import sobreImg from '../assets/images/sobre.jpeg'
 
 // Link WhatsApp com mensagem pré-preenchida
 const WHATSAPP_LINK = "https://wa.me/5531996568462?text=Olá%20Vitor!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20criação%20de%20um%20site%20para%20meu%20negócio.%0A%0ATipo%20de%20negócio:%0AObjetivo%20do%20site:%0AForma%20de%20contato%20com%20clientes:"
+
+// Links WhatsApp com mensagens específicas por serviço
+const WHATSAPP_BASE = "https://wa.me/5531996568462?text="
+
+const WHATSAPP_LINKS = {
+  institucional: WHATSAPP_BASE + encodeURIComponent(`Olá Vitor! Vi o projeto de Site Institucional no seu site e tenho interesse em algo similar para meu negócio.
+
+Tipo de negócio:
+Objetivo do site:
+Forma de contato com clientes:`),
+  
+  landing: WHATSAPP_BASE + encodeURIComponent(`Olá Vitor! Vi o projeto de Landing Page no seu site e quero uma página focada em conversão.
+
+Tipo de negócio:
+Objetivo da página:
+Forma de contato com clientes:`),
+  
+  local: WHATSAPP_BASE + encodeURIComponent(`Olá Vitor! Vi o projeto para Negócio Local no seu site e preciso de um site para minha empresa.
+
+Tipo de negócio:
+Objetivo do site:
+Forma de contato com clientes:`),
+  
+  geral: WHATSAPP_BASE + encodeURIComponent(`Olá Vitor! Vi seu site e gostaria de saber mais sobre a criação de um site para meu negócio.
+
+Tipo de negócio:
+Objetivo do site:
+Forma de contato com clientes:`)
+}
 
 export default function Home() {
   const [activeModal, setActiveModal] = useState(null)
 
   return (
     <>
-      {/* HERO - IMAGEM + TEXTO DESENVOLVEDOR */}
+      {/* ==================== HERO ==================== */}
       <section id="home" className="hero">
         <div className="container hero-container">
-          {/* IMAGEM PRIMEIRO */}
           <div className="hero-image slide-in">
             <img src={foto} alt="Foto de Vitor, desenvolvedor web" />
           </div>
 
-          {/* TEXTO */}
           <div className="hero-text text-reveal">
             <h1>
               Desenvolvedor Web <span>Fullstack</span>
@@ -27,14 +54,14 @@ export default function Home() {
 
             <p>
               Crio sites e sistemas web modernos, rápidos e escaláveis usando
-              JavaScript, HTML, CSS, JavaScript, TypeScript, React, Next.js e boas
+              JavaScript, HTML, CSS, TypeScript, React, Next.js e boas
               práticas de engenharia.
             </p>
 
             <div className="hero-actions">
-              <Link to="/projetos" className="btn primary">
+              <a href="#projetos" className="btn primary">
                 Ver projetos
-              </Link>
+              </a>
               <a 
                 href={WHATSAPP_LINK}
                 target="_blank"
@@ -48,8 +75,53 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SOLUÇÕES DIGITAIS */}
-      <section className="home-services">
+      {/* ==================== SOBRE ==================== */}
+      <section id="sobre" className="about">
+        <div className="about-container">
+          <div className="about-text text-reveal">
+            <h2>
+              Sobre <span>mim</span>
+            </h2>
+
+            <p>
+              Meu nome é Vitor e estudo programação desde a infância, movido por
+              curiosidade e interesse genuíno em tecnologia. Escrevi minha primeira
+              linha de código entre 2014 e 2015, aprendendo de forma autodidata por
+              meio de cursos e conteúdos online.
+            </p>
+
+            <p>
+              Atualmente curso <strong>Engenharia de Software</strong> em Belo
+              Horizonte, na faculdade <strong>Wyden</strong>, e sigo aprofundando
+              meus conhecimentos diariamente.
+            </p>
+
+            <p>
+              Hoje meu foco é o desenvolvimento de sites e interfaces web, criando
+              soluções para consultórios odontológicos, escritórios de advocacia e
+              páginas de vendas integradas a funis de conversão.
+            </p>
+
+            <p>
+              Minha especialidade está no <strong>Front-End</strong>, utilizando
+              HTML, CSS, JavaScript, TypeScript, React e Next.js. Também possuo
+              conhecimentos em Python.
+            </p>
+
+            <p className="about-highlight">
+              Estou em constante evolução e aberto a novos projetos e clientes,
+              sempre com foco em performance, clareza e resultados reais.
+            </p>
+          </div>
+
+          <div className="about-image slide-in">
+            <img src={sobreImg} alt="Vitor, desenvolvedor web" />
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== SERVIÇOS ==================== */}
+      <section id="servicos" className="home-services">
         <div className="container">
           <div className="services-header fade-up">
             <span className="services-eyebrow">
@@ -95,10 +167,168 @@ export default function Home() {
               <button onClick={() => setActiveModal('performance')}>Ver solução</button>
             </div>
           </div>
+
+          {/* COMO FUNCIONA */}
+          <div className="process-section fade-up">
+            <h3>Como funciona o processo</h3>
+            <ol className="process-list">
+              <li>
+                <strong>Entendimento da necessidade</strong>
+                <span>Análise do seu negócio e objetivos</span>
+              </li>
+              <li>
+                <strong>Definição da melhor solução</strong>
+                <span>Estratégia clara e alinhada ao seu público</span>
+              </li>
+              <li>
+                <strong>Desenvolvimento e validações</strong>
+                <span>Construção com feedbacks rápidos</span>
+              </li>
+              <li>
+                <strong>Entrega e suporte inicial</strong>
+                <span>Site pronto para uso e conversão</span>
+              </li>
+            </ol>
+          </div>
         </div>
       </section>
 
-      {/* MODAL */}
+      {/* ==================== PROJETOS ==================== */}
+      <section id="projetos" className="projects-section">
+        <div className="container">
+          <div className="projects-header fade-up">
+            <h2>
+              Projetos & <span>Estudos de Caso</span>
+            </h2>
+
+            <p>
+              Projetos demonstrativos criados para apresentar soluções reais
+              de desenvolvimento web focadas em conversão, performance e
+              experiência do usuário.
+            </p>
+          </div>
+
+          <div className="projects-grid">
+            <article className="project-card fade-up delay-1">
+              <span className="project-tag">Projeto demonstrativo</span>
+              
+              <div className="project-content">
+                <h3>Site Institucional</h3>
+
+                <p>
+                  Estudo de caso demonstrativo criado para simular a presença online
+                  de um consultório odontológico focado em credibilidade e captação
+                  de pacientes via WhatsApp.
+                </p>
+
+                <ul className="project-points">
+                  <li>Apresentação clara dos serviços</li>
+                  <li>Design profissional e confiável</li>
+                  <li>CTA direto para WhatsApp</li>
+                </ul>
+              </div>
+
+              <a 
+                href={WHATSAPP_LINKS.institucional}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-cta"
+              >
+                Quero um projeto assim
+              </a>
+            </article>
+
+            <article className="project-card fade-up delay-2">
+              <span className="project-tag">Estudo de caso</span>
+              
+              <div className="project-content">
+                <h3>Landing Page de Conversão</h3>
+
+                <p>
+                  Projeto conceitual de landing page desenvolvida para demonstrar
+                  estrutura de conversão e direcionamento de visitantes para
+                  funil de vendas ou atendimento humano.
+                </p>
+
+                <ul className="project-points">
+                  <li>Headline estratégica</li>
+                  <li>Copy clara e objetiva</li>
+                  <li>CTA focado em conversão</li>
+                </ul>
+              </div>
+
+              <a 
+                href={WHATSAPP_LINKS.landing}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-cta"
+              >
+                Quero um projeto assim
+              </a>
+            </article>
+
+            <article className="project-card fade-up delay-3">
+              <span className="project-tag">Projeto conceitual</span>
+              
+              <div className="project-content">
+                <h3>Site Profissional para Negócio Local</h3>
+
+                <p>
+                  Estudo de caso criado para representar a presença digital de um
+                  negócio local que utiliza o site como ferramenta de captação
+                  de clientes.
+                </p>
+
+                <ul className="project-points">
+                  <li>Presença online profissional</li>
+                  <li>Layout responsivo</li>
+                  <li>Contato facilitado via WhatsApp</li>
+                </ul>
+              </div>
+
+              <a 
+                href={WHATSAPP_LINKS.local}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-cta"
+              >
+                Quero um projeto assim
+              </a>
+            </article>
+          </div>
+
+          <div className="projects-note fade-up">
+            <p>
+              Os projetos apresentados são estudos de caso demonstrativos,
+              criados para ilustrar soluções reais aplicáveis a diferentes
+              tipos de negócio.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== CTA FINAL ==================== */}
+      <section id="contato" className="final-cta">
+        <div className="container">
+          <h2>Quer um projeto assim para o seu negócio?</h2>
+
+          <p>
+            Me conte rapidamente sobre seu negócio e vamos criar uma solução
+            web focada em conversão e resultados reais.
+          </p>
+
+          <a 
+            href={WHATSAPP_LINKS.geral}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn primary"
+          >
+            Falar no WhatsApp
+          </a>
+        </div>
+      </section>
+
+      {/* ==================== MODAL ==================== */}
       {activeModal && (
         <div className="modal-overlay" onClick={() => setActiveModal(null)}>
           <div className="modal" onClick={(e) => e.stopPropagation()}>

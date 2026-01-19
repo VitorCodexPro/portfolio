@@ -4,8 +4,16 @@
 
   --primary: #F15A22;   /* laranja energia */
   --secondary: #0A0E27; /* azul escuro */
-  --text-main: #e5e7eb;
-  --text-muted: #94a3b8;
+  --accent-text: #40E0D0; /* turquoise para textos de destaque */
+  
+  /* Texto com contraste real */
+  --text-white: #FFFFFF;
+  --text-main: #E2E4ED;
+  --text-muted: #C9CBD6;
+  
+  /* Card backgrounds - quase sólidos */
+  --card-bg: rgba(18, 16, 28, 0.92);
+  --card-bg-hover: rgba(18, 16, 28, 0.95);
 }
 
 /* =========================
