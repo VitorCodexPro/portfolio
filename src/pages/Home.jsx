@@ -11,6 +11,44 @@ export default function Home() {
 
   return (
     <>
+      {/* HERO - IMAGEM + TEXTO DESENVOLVEDOR */}
+      <section id="home" className="hero">
+        <div className="container hero-container">
+          {/* IMAGEM PRIMEIRO */}
+          <div className="hero-image slide-in">
+            <img src={foto} alt="Foto de Vitor, desenvolvedor web" />
+          </div>
+
+          {/* TEXTO */}
+          <div className="hero-text text-reveal">
+            <h1>
+              Desenvolvedor Web <span>Fullstack</span>
+            </h1>
+
+            <p>
+              Crio sites e sistemas web modernos, rápidos e escaláveis usando
+              JavaScript, HTML, CSS, JavaScript, TypeScript, React, Next.js e boas
+              práticas de engenharia.
+            </p>
+
+            <div className="hero-actions">
+              <Link to="/projetos" className="btn primary">
+                Ver projetos
+              </Link>
+              <a 
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn secondary"
+              >
+                Falar no WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SOLUÇÕES DIGITAIS */}
       <section className="home-services">
         <div className="container">
           <div className="services-header fade-up">
@@ -56,42 +94,6 @@ export default function Home() {
               </p>
               <button onClick={() => setActiveModal('performance')}>Ver solução</button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="home" className="hero">
-        <div className="container hero-container">
-          {/* TEXTO */}
-          <div className="hero-text text-reveal">
-            <h1>
-              Desenvolvedor Web <span>Fullstack</span>
-            </h1>
-
-            <p>
-              Crio sites e sistemas web modernos, rápidos e escaláveis usando
-              JavaScript, HTML, CSS, JavaScript, TypeScript, React, Next.js e boas
-              práticas de engenharia.
-            </p>
-
-            <div className="hero-actions">
-              <Link to="/projetos" className="btn primary">
-                Ver projetos
-              </Link>
-              <a 
-                href={WHATSAPP_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn secondary"
-              >
-                Falar no WhatsApp
-              </a>
-            </div>
-          </div>
-
-          {/* IMAGEM */}
-          <div className="hero-image slide-in">
-            <img src={foto} alt="Foto de Vitor, desenvolvedor web" />
           </div>
         </div>
       </section>

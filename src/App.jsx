@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom'
 
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
-import BackgroundCanvas from './components/BackgroundCanvas/BackgroundCanvas'
 
 import Home from './pages/Home'
 import About from './pages/About'
@@ -13,7 +12,6 @@ import Contact from './pages/Contact'
 function App() {
   return (
     <>
-      <BackgroundCanvas />
       <Header />
 
       <main>
