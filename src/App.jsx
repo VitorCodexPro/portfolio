@@ -4,24 +4,14 @@
 function App() {
   return (
     <div style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
       height: '100vh',
       width: '100vw',
-      backgroundColor: '#000',
-      color: '#fff',
-      fontSize: 'clamp(3rem, 10vw, 8rem)',
-      fontWeight: 'bold',
-      fontFamily: 'sans-serif',
-      letterSpacing: '0.2em',
-      textAlign: 'center',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)',
       position: 'fixed',
       top: 0,
       left: 0,
       zIndex: 9999
     }}>
-      LOADING...
     </div>
   )
 }
